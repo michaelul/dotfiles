@@ -1,7 +1,17 @@
 #+TITLE: DOTFILES
 * WM
-** i3-gaps
-** bspwm
-** qtile (cringe, not really done)
-** awesome
-**
+- [[#i3][i3-gaps]]
+- [[#bspwm][bspwm]]
+- qtile (cringe, not really done)
+- awesome (soon)
+* Other
+- alacritty
+- polybar
+- rofi
+- compton
+- wallpapers
+- doom emacs theme - doom-outrun-electric
+* i3
+#+CAPTION: i3
+* bspwm
+#+CAPTION: bspwm
