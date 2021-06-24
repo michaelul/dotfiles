@@ -25,4 +25,4 @@
 * [[https://gitlab.com/majkel_/dotfiles/-/tree/main/.config/i3][i3]]
 #+CAPTION: i3
 [[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:59.png]]
-https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:50.png
+[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:50.png]]
