@@ -1,0 +1,226 @@
+[bar/bar]
+
+
+
+
+monitor = "eDP1"
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+fixed-center = true
+
+width = 100%
+height = 30
+
+
+background = #1d1f21
+foreground = #707880
+
+radius = 0.0
+
+# line-size = 1
+# line-color = #f00
+
+# border-size = 2
+# border-color = #00ff00
+module-margin = 1
+
+modules-left =  i3  uptime ping networkspeed
+modules-center = date
+modules-right =  mic-volume battery pavolume  backlight backlight2  wlan 
+
+font-0 = "Overpass Mono:pixelsize=10;2.25"
+;Most icons
+font-1 = "Inconsolata Nerd Font Mono:style=Medium:pixelsize=17;2" 
+
+
+font-2 = FontAwesome5Free:style=Solid:size=11;2
+font-4 = FontAwesome5Brands:style=Solid:size=11;2
+;Wifi
+font-5 = "Material Design Icons:pixelsize=13;3"
+;Battery charging (good siwifize)
+font-6 = "Inconsolata Nerd Font Mono:style=Medium:pixelsize=29;5"
+;Bars (music player, volume,brightness)
+font-7 = "Inconsolata Nerd Font Mono:style=Medium:pixelsize=17;4"
+font-8 = Roboto:pixelsize=12:antialias=true
+font-9 = JetBrainsMono Nerd Font:pixelsize=20:antialias=true
+
+[module/networkspeed]
+type = internal/network
+interface = wlp2s0
+interval = 1.0
+label-connected = " %downspeed%    %upspeed%"
+label-disconnected = disconnected
+label-connected-background = #1d1f21
+
+[module/i3]
+format                      = <label-state> <label-mode>
+index-sort                  = true
+pin-workspaces              = false
+type                        = internal/i3
+wrapping-scroll             = false
+
+label-focused-font = 0
+label-unfocused-font = 0
+label-urgent-font = 0
+label-mode-font = 0
+
+module-margin = 0
+
+label-mode                  = %mode%
+label-mode-background       = #15d676
+label-mode-foreground       = #ffffff
+label-mode-padding          = 1
+
+label-focused               = 
+label-focused-background    = #1d1f21
+label-focused-foreground    = #fca503
+label-focused-padding       = 1
+
+label-unfocused             = 
+label-unfocused-background  = #1d1f21
+label-unfocused-foreground  = #660066
+label-unfocused-padding     = 1
+
+label-urgent                = 
+label-urgent-background     = #1d1f21
+label-urgent-foreground     = #ff0000
+label-urgent-padding        = 1
+
+label-visible               = 
+label-visible-foreground    = #ffffff
+label-visible-padding       = 1
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %d %B %I:%M %p
+
+[module/backlight]
+type = internal/xbacklight
+output = eDP1
+
+
+enable-scroll = true
+scroll-up = xbacklight -dec 5
+scroll-down = xbacklight -inc 5
+format = <ramp>
+label = %percentage%%
+ramp-foreground = #fca503
+
+ramp-0 = 🌕
+ramp-1 =  
+ramp-2 =  
+ramp-3 =  
+ramp-4 =  
+
+[module/backlight2]
+type = internal/xbacklight
+output = eDP1
+
+
+enable-scroll = true
+scroll-up = xbacklight -dec 5
+scroll-down = xbacklight -inc 5
+format = <label>
+label = %percentage%%
+label-foreground = #fca503
+
+[module/uptime]
+type = custom/script
+exec = ~/scripts/uptime_poly.sh
+interval = 30
+
+[module/mic-volume]
+type = custom/script
+interval = 1
+format = "Mic: <label>"
+label-foreground = #fca503
+exec = bash /home/majkel/scripts/mic_volume.sh show-vol alsa_input.pci-0000_00_1b.0.analog-stereo
+
+; Control actions (using pactl)
+click-left = bash /home/majkel/scripts/mic_volume.sh mute-vol alsa_input.pci-0000_00_1b.0.analog-stereo 
+scroll-down = bash /home/majkel/scripts/mic_volume.sh inc-vol alsa_input.pci-0000_00_1b.0.analog-stereo
+scroll-up = bash /home/majkel/scripts/mic_volume.sh dec-vol alsa_input.pci-0000_00_1b.0.analog-stereo
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+full-at = 98
+
+format-charging = <animation-charging>  <label-charging>
+format-charging-foreground = #ffffff
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full =  <label-full>
+format-full-foreground = #ffffff
+
+label-discharging = "%percentage%%"
+label-charging = "%percentage%%"
+label-full = "%percentage%%"
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+format-padding = 1
+
+
+[module/ping]
+type = custom/script
+exec = ~/scripts/ping_poly.sh
+interval = 10
+
+[module/wlan]
+format-connected                      = %{A1:tilix -e wicd-curses:}直<label-connected>%{A}
+format-connected-foreground           = #6603fc
+format-connected-background-0    = #6C6AF2
+format-connected-background-1    = #4648FB
+
+format-disconnected                   = %{A1:tilix -e wicd-curses:}睊%{A}
+format-disconnected-foreground        = #6603fc
+format-disconnected-background-0    = #6C6AF2
+format-disconnected-background-1    = #4648FB
+
+interface                             = wlp2s0
+
+interval                              = 3.0
+
+label-connected = " %{A1:nm-connection-editor:}%essid%%{A}"
+
+format-connected-padding              = 1
+format-disconnected-padding           = 1
+
+
+type                                  = internal/network
+
+[module/pavolume]
+type = custom/script
+tail = true
+format-underline = #15d676
+label-padding = 0
+label-foreground = #ffffff
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo: : " --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo: :) " listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 down
+scroll-down = pulseaudio-control --volume-max 130 up
+

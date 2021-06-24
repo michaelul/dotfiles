@@ -1,0 +1,250 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+dark-light = #272A2B
+active-light = #313435
+
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+
+format = <label-state>
+
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+
+
+
+
+label-separator = " "
+
+
+label-focused =  %icon%  %name%
+label-focused-foreground = #00B9CF
+label-focused-background =${colors.active-light}
+label-focused-padding = 1
+
+
+label-occupied = %icon%  %name%
+label-occupied-foreground =#ffffff
+label-occupied-background =${colors.dark-light}
+
+label-occupied-padding = 1
+
+label-empty = %icon%
+label-empty-foreground =#ffffff
+label-empty-padding = 1
+
+label-urgent = %icon%
+xxlabel-urgent-foreground = #88C0D0
+label-urgent-padding = 1
+
+[bar/bar]
+
+tray-position = right
+monitor = eDP1
+width =  100%
+height = 18
+padding-left =1
+padding-right =1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+
+border-top-size = 6
+border-bottom-size = 6
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
+
+line-size = 0
+wm-restack = bspwm
+
+modules-left = bspwm
+modules-center = date
+modules-right =  battery cpu memory  xbacklight pavolume wlan
+
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=9;2
+font-1 = Material Design Icons:style=Regular:size=9;2
+font-2 = unifont:fontformat=truetype:size=9:antialias=true;
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %d %B %I:%M %p
+
+[module/repo]
+type = custom/script
+exec = doas xbps-install -S
+format =
+interval = 4600
+label =
+
+
+[module/wlan]
+format-connected                      = %{A1:tilix -e wicd-curses:}直<label-connected>%{A}
+
+format-disconnected                   = %{A1:tilix -e wicd-curses:}睊%{A}
+
+interface                             = wlp2s0
+
+interval                              = 3.0
+
+label-connected = " %{A1:nm-connection-editor:}%essid%%{A}"
+
+format-connected-padding              = 1
+format-disconnected-padding           = 1
+
+
+type                                  = internal/network
+
+format-background = #85c181
+format-foreground =${colors.background}
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC0
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+format-charging-foreground = ${colors.color4}
+format-charging-background = ${colors.background}
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.color4}
+format-foreground = ${colors.color4}
+format-background = ${colors.background}
+
+label-discharging-foreground = ${colors.foreground}
+label-charging-foreground = ${colors.color4}
+label-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.color4}
+animation-charging-framerate = 750
+
+format-charging-padding = 1
+format-discharging-padding = 1
+
+
+
+[module/pavolume]
+type = custom/script
+tail = true
+format-underline = #15d676
+label-padding = 0
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo: : " --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo: :) " listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 down
+scroll-down = pulseaudio-control --volume-max 130 up
+
+format-background =#6220e6
+format-foreground =${colors.background}
+format-padding = 1
+[module/xbacklight]
+type = internal/xbacklight
+format = BRIGHT <label>
+label = %percentage%%
+format-padding = 2
+
+format-background =#e67220
+format-foreground =${colors.background}
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2.5
+
+format =  <label>
+format-padding = 1
+label = CPU %percentage%%
+format-background = #81A1C1
+format-foreground =${colors.background}
+
+[module/memory]
+type = internal/memory
+interval = 2.5
+
+format =﬙ <label>
+format-padding = 1
+label = MEM %percentage_used%%
+format-background = #d16ae6
+format-foreground =${colors.background}
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...
