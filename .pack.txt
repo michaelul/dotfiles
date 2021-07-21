@@ -1,0 +1,102 @@
+Root      : /
+Conf File : /etc/pacman.conf
+DB Path   : /var/lib/pacman/
+Cache Dirs: /var/cache/pacman/pkg/  
+Hook Dirs : /usr/share/libalpm/hooks/  /etc/pacman.d/hooks/  
+Lock File : /var/lib/pacman/db.lck
+Log File  : /var/log/pacman.log
+GPG Dir   : /etc/pacman.d/gnupg/
+Targets   : None
+arc-gtk-theme 20210412-1
+autoconf 2.71-1
+automake 1.16.3-1
+awesome 4.3-2
+base 2-2
+bind 9.16.18-1
+bison 3.7.6-1
+bluez-utils 5.60-1
+bspwm 0.9.10-1
+cmatrix 2.0-2
+code 1.58.0-1
+cronie 1.5.7-2
+cups-pdf 3.0.1-6
+d-feet 0.3.16-1
+dialog 1:1.3_20210621-1
+discord 0.0.15-1
+dmidecode 3.3-1
+dunst 1.6.1-2
+elisa 21.04.3-1
+emacs 27.2-1
+exa 0.10.1-1
+exfat-utils 1.3.0-2
+fd 8.2.1-1
+filelight 21.04.3-1
+firefox 90.0-1
+flex 2.6.4-3
+fuseiso 20070708-8
+gparted 1.3.1-1
+groff 1.22.4-6
+grub 2:2.06-1
+gsfonts 20200910-2
+haveged 1.9.14-1
+herbstluftwm 0.9.3-1
+htop 3.0.5-1
+iftop 1.0pre4-4
+inetutils 2.0-1
+intel-ucode 20210608-1
+kate 21.04.3-1
+libreoffice-fresh-eu 7.1.4-1
+libreoffice-fresh-pl 7.1.4-1
+lolcat 100.0.1-1
+lxappearance 0.6.3-4
+memtest86+ 5.31b-1
+nano 5.8-1
+neovim 0.5.0-1
+network-manager-applet 1.22.0-1
+ntp 4.2.8.p15-1
+opendesktop-fonts 1.4.2-6
+opera 77.0.4054.254-1
+otf-overpass 3.0.4-2
+pacman-contrib 1.4.0-4
+pavucontrol 1:4.0-2
+pkgconf 1.7.3-1
+powertop 2.14-1
+qbittorrent 4.3.6-1
+qtile 0.18.0-2
+ranger 1.9.3-3
+rsync 3.2.3-3
+sdl_ttf 2.0.11-6
+shutter 0.97-3
+spectacle 21.04.3-1
+spectrwm 3.4.1-1
+speedtest-cli 2.1.3-1
+sway 1:1.6.1-1
+thermald 2.4.6-1
+tldr 1.2.1-1
+tlp 1.3.1-2
+traceroute 2.1.0-5
+ttf-font-awesome 5.15.3-1
+ttf-jetbrains-mono 2.225-1
+ttf-roboto 2.138-4
+wavemon 0.9.3-1
+wget 1.21.1-1
+wireless_tools 30.pre9-3
+xautolock 2.2-6
+xdg-user-dirs 0.17-3
+xf86-video-fbdev 0.5.0-2
+xf86-video-intel 1:2.99.917+916+g31486f40-1
+xf86-video-vesa 2.5.0-1
+xmobar 0.38-8
+xmonad-contrib 0.16-114
+xorg-font-util 1.3.2-2
+xorg-fonts-100dpi 1.0.3-7
+xorg-fonts-75dpi 1.0.3-7
+xorg-fonts-cyrillic 1.0.3-6
+xorg-fonts-type1 7.7-6
+xorg-server 1.20.12-1
+xorg-xbacklight 1.2.3-2
+xorg-xev 1.2.4-1
+xorg-xinit 1.4.1-3
+xorg-xinput 1.6.3-2
+xorg-xkill 1.0.5-2
+youtube-dl 2021.06.06-1
