@@ -12,15 +12,14 @@
 
 * bspwm
 #+CAPTION: bspwm
- - [[https://gitlab.com/majkel_/dotfiles/-/tree/main/.config/bspwm][bspwm]]
- - [[https://gitlab.com/majkel_/dotfiles/-/tree/main/.config/sxhkd][sxhkd]]
- #+ATTR_HTML: align : left width: 1024 height : 768
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:46:45.png]]
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:47:27.png]]
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:48:35.png]]
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:48:50.png]]
 
-* [[https://gitlab.com/majkel_/dotfiles/-/tree/main/config/i3][i3]]
+ #+ATTR_HTML: align : left width: 1024 height : 768
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_24-06-2021-23:46:45.png]]
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_24-06-2021-23:47:27.png]]
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_24-06-2021-23:48:35.png]]
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_24-06-2021-23:48:50.png]]
+
+
 #+CAPTION: i3
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:59.png]]
-[[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:50.png]]
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_25-06-2021-00:39:59.png]]
+[[https://github.com/michaelul/dotfiles/tree/main/.screenshots/Screenshot_25-06-2021-00:39:50.png]]
