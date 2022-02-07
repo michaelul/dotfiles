@@ -1,5 +1,3 @@
-#+TITLE: DOTFILES
-* WM
 - [[#i3][i3-gaps]]
 - [[#bspwm][bspwm]]
 - qtile (cringe, not really done)
@@ -22,7 +20,7 @@
 [[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:48:35.png]]
 [[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_24-06-2021-23:48:50.png]]
 
-* [[https://gitlab.com/majkel_/dotfiles/-/tree/main/.config/i3][i3]]
+* [[https://gitlab.com/majkel_/dotfiles/-/tree/main/config/i3][i3]]
 #+CAPTION: i3
 [[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:59.png]]
 [[https://gitlab.com/majkel_/dotfiles/-/raw/main/.screenshots/Screenshot_25-06-2021-00:39:50.png]]
